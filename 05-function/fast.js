@@ -10,5 +10,5 @@ for(num of number){
     
 
 };
-console.log("Final Sum = " + Sum);
-console.log(sum);
+console.log("Final Sum = " + sum);
+// console.log(sum);
