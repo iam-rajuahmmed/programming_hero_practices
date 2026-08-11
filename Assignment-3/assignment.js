@@ -1,4 +1,4 @@
-function studentIntroduction(student) {
+const studentIntroduction = (student) => {
     if (typeof student !== 'object') {
         return "Invalid";
     } else if (student === null) {
@@ -12,19 +12,18 @@ function studentIntroduction(student) {
     } else if (student.course === undefined) {
         return "Invalid";
     } else {
-        return `My name is ${student.name}. Iam ${student.age}years old. Iam learning ${student.course}.`;
+        return `My name is ${student.name}. I am ${student.age} years old. I am learning ${student.course}.`;
     }
-}
+};
 
-function filterActiveUsers(users) {
+const filterActiveUsers = (users) => {
     if (!Array.isArray(users)) {
         return "Invalid";
     } else if (users.length === 0) {
         return "Invalid";
     }
 
-    for (let i = 0; i < users.length; i++) {
-        let user = users[i];
+    for (let user of users) {
         if (typeof user !== 'object') {
             return "Invalid";
         } else if (user === null) {
@@ -37,9 +36,10 @@ function filterActiveUsers(users) {
     }
 
     return users.filter(user => user.isActive === true);
-}
+};
 
-function countHashtags(caption) {
+
+const countHashtags = (caption) => {
     if (typeof caption !== 'string') {
         return "Invalid";
     }
@@ -48,8 +48,7 @@ function countHashtags(caption) {
     let hashtagCount = 0;
     let longestTag = "";
 
-    for (let i = 0; i < words.length; i++) {
-        let word = words[i];
+    for (let word of words) {
         if (word.startsWith("#")) {
             hashtagCount++;
             let tagWithoutHash = word.substring(1);
@@ -61,17 +60,16 @@ function countHashtags(caption) {
     }
 
     return { hashtagCount: hashtagCount, longestTag: longestTag };
-}
+};
 
-function bonusScore(scores) {
+const bonusScore = (scores) => {
     if (!Array.isArray(scores)) {
         return "Invalid";
     } else if (scores.length === 0) {
         return "Invalid";
     }
 
-    for (let i = 0; i < scores.length; i++) {
-        let score = scores[i];
+    for (let score of scores) {
         if (typeof score !== 'number') {
             return "Invalid";
         }
@@ -81,18 +79,17 @@ function bonusScore(scores) {
     const total = updatedScores.reduce((sum, current) => sum + current, 0);
 
     return total;
-}
+};
 
-function generateLeaderboard(students) {
+
+const generateLeaderboard = (students) => {
     if (!Array.isArray(students)) {
         return "Invalid";
     } else if (students.length === 0) {
         return "Invalid";
     }
 
-    for (let i = 0; i < students.length; i++) {
-        let student = students[i];
-
+    for (let student of students) {
         if (typeof student !== 'object') {
             return "Invalid";
         } else if (student === null) {
@@ -112,4 +109,4 @@ function generateLeaderboard(students) {
     const names = qualified.map(student => student.name.toUpperCase());
 
     return names.slice(0, 3);
-}
+};
