@@ -1,0 +1,63 @@
+@import 'react-toastify/dist/ReactToastify.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* ========================================================= */
+  /* Shared Single-Source Brand Gradient (Orange -> Pink -> Violet) */
+  /* Changing this single variable updates the entire site theme */
+  /* ========================================================= */
+  --brand-gradient: linear-gradient(135deg, #FF5A36 0%, #E11D74 52%, #8538DC 100%);
+  --brand-gradient-hover: linear-gradient(135deg, #E84D2A 0%, #C81564 52%, #7328BF 100%);
+  --brand-glow: rgba(225, 29, 116, 0.25);
+}
+
+/* Reusable brand gradient utility classes */
+.brand-gradient-bg {
+  background: var(--brand-gradient);
+  transition: all 0.25s ease-in-out;
+}
+
+.brand-gradient-bg:hover {
+  background: var(--brand-gradient-hover);
+  box-shadow: 0 10px 25px -5px var(--brand-glow);
+}
+
+.brand-gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F1F5F9;
+}
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Smooth animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.25s ease-out forwards;
+}
