@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast, Slide } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import Navbar from './components/Navbar';
@@ -45,6 +45,7 @@ export default function App() {
     if (isAlreadyAdded) {
       toast.warning(`${tech.name} is already in your stack!`, {
         icon: '⚠️',
+        autoClose: 3000,
       });
       return;
     }
@@ -52,6 +53,7 @@ export default function App() {
     setSelectedStack((prev) => [...prev, tech]);
     toast.success(`${tech.name} added to your stack!`, {
       icon: '🎉',
+      autoClose: 3000,
     });
   };
 
@@ -60,6 +62,7 @@ export default function App() {
     setSelectedStack((prev) => prev.filter((item) => item.id !== tech.id));
     toast.info(`${tech.name} removed from your stack.`, {
       icon: '🗑️',
+      autoClose: 3000,
     });
   };
 
@@ -69,6 +72,7 @@ export default function App() {
     setSelectedStack([]);
     toast.error('All technologies removed from your stack.', {
       icon: '🧹',
+      autoClose: 3000,
     });
   };
 
@@ -77,14 +81,12 @@ export default function App() {
       {/* Toast notifications container (bottom side) */}
       <ToastContainer
         position="bottom-right"
-        autoClose={2500}
+        autoClose={3000}
         hideProgressBar={false}
-        newestOnTop
-        closeOnClick
-        rtl={false}
-        pauseOnFocusLoss
-        draggable
-        pauseOnHover
+        newestOnTop={true}
+        closeOnClick={true}
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
         theme="light"
       />
 
@@ -104,15 +106,15 @@ export default function App() {
         />
 
         {/* Explore Technologies & Your Stack Section */}
-        <section id="technologies" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-20">
+        <section id="technologies" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-16">
           
           {/* Section Header */}
-          <div className="mb-10 text-left">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
+          <div className="mb-6 sm:mb-8 text-left">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight">
               Explore the{' '}
               <span className="brand-gradient-text">Technologies</span>
             </h2>
-            <p className="mt-2 text-base text-slate-500">
+            <p className="mt-1.5 sm:mt-2 text-xs sm:text-base text-slate-500">
               Pick one technology per category to build your ideal stack.
             </p>
           </div>

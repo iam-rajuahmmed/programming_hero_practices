@@ -7,31 +7,31 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-slate-100 transition-all duration-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           
           {/* Mobile: Hamburger Icon (Left on mobile, hidden on md+) */}
           <div className="flex md:hidden items-center">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 -ml-2 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-pink-500"
+              className="p-1.5 -ml-1.5 rounded-lg text-slate-700 hover:text-slate-900 hover:bg-slate-100 focus:outline-none focus:ring-2 focus:ring-pink-500"
               aria-label="Toggle navigation menu"
               aria-expanded={mobileMenuOpen}
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               )}
             </button>
           </div>
 
           {/* Brand Logo & Name */}
-          <div className="flex items-center gap-2">
-            <a href="#" className="flex items-center gap-2.5 group">
-              <div className="w-9 h-9 rounded-xl brand-gradient-bg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-200">
-                <span className="text-white font-bold text-base tracking-tight">DS</span>
+          <div className="flex items-center gap-1.5 sm:gap-2">
+            <a href="#" className="flex items-center gap-1.5 sm:gap-2.5 group">
+              <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-lg sm:rounded-xl brand-gradient-bg flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform duration-200">
+                <span className="text-white font-bold text-xs sm:text-base tracking-tight">DS</span>
               </div>
-              <div className="flex items-center text-xl font-bold tracking-tight">
+              <div className="flex items-center text-base sm:text-xl font-bold tracking-tight">
                 <span className="text-slate-900">Dev</span>
                 <span className="brand-gradient-text ml-0.5">Stack</span>
               </div>
@@ -73,16 +73,16 @@ export default function Navbar() {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex items-center gap-2 sm:gap-4">
+          <div className="flex items-center gap-1.5 sm:gap-4">
             <button
               type="button"
-              className="text-sm font-medium text-slate-700 hover:text-slate-900 px-3 py-2 rounded-lg hover:bg-slate-100 transition-colors"
+              className="text-xs sm:text-sm font-medium text-slate-700 hover:text-slate-900 px-2 py-1.5 sm:px-3 sm:py-2 rounded-lg hover:bg-slate-100 transition-colors"
             >
               Sign In
             </button>
             <button
               type="button"
-              className="text-sm font-semibold text-white px-5 py-2.5 rounded-full brand-gradient-bg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
+              className="text-xs sm:text-sm font-semibold text-white px-3 py-1.5 sm:px-5 sm:py-2.5 rounded-full brand-gradient-bg shadow-sm hover:shadow-md transition-all duration-200 hover:-translate-y-0.5"
             >
               Sign Up
             </button>

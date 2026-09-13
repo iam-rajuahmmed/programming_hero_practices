@@ -61,3 +61,10 @@
 .animate-fade-in {
   animation: fadeIn 0.25s ease-out forwards;
 }
+
+/* Visually hide toast progress bar without breaking internal timer */
+.Toastify__progress-bar {
+  opacity: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
